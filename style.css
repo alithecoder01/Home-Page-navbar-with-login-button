@@ -254,3 +254,113 @@ body{
 .login-register p a:hover{
     text-decoration: underline;
 }
+
+.barsIcon{
+    display: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    right: 2rem;
+    cursor:pointer;
+}
+.reducedMenu{
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter:blur(10px) ;
+    border-radius: 15px;
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ;
+}
+
+.reducedMenu.open{
+    height: 270px;
+}
+
+.reducedMenu li{
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reducedMenu li a{
+    text-decoration: none;
+}
+.dropdownBtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.dropdownBtn:hover {
+    background: white;
+    color: #162938;
+}
+
+.reducedMenu a{
+    
+    position: relative;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    align-items: center;
+}
+
+.reducedMenu a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.reducedMenu a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+
+@media (max-width: 990px) {
+    .navBar{
+        display: none;
+    }
+    
+    div .barsIcon{
+        display: block;
+    }
+
+    div.reducedMenu{
+        display: block;
+    }
+}
+
+
+@media (max-width : 300px) {
+    .reducedMenu{
+        left: 30px;
+        width: unset;
+    }
+}
